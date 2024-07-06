@@ -1,2 +1,5 @@
 # Chat
-ASP.NET Core, SignalR and React and Angular
+ASP.NET Core
+Redis 
+SignalR
+React
