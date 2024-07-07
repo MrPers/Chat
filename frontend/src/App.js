@@ -28,10 +28,27 @@ const App = () => {
 			console.log(error);
 		}
 	};
+	
+	const sendMessage = async (message) => {
+		await connection.invoke("SendMessage", message);
+	};
+
+	const closeChat = async () => {
+		await connection.stop();
+		setConnection(null);
+	};
 
   return (
 		<div className="min-h-screen flex items-center justify-center bg-gray-100">
-			{connection ? ( <Chat/>) : (<WaitingRoom joinChat={joinChat} />)}
+			{connection ? ( 
+				<Chat
+					messages={messages}
+					sendMessage={sendMessage}
+					closeChat={closeChat}
+					chatRoom={chatRoom}/>
+			) : (
+				<WaitingRoom joinChat={joinChat} 
+			/>)}
     </div>
   );
 }

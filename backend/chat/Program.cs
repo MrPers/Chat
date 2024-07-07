@@ -1,13 +1,12 @@
 using Chat.Hubs;
-//using RealTimeChat.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//builder.Services.AddStackExchangeRedisCache(options =>
-//{
-//    var connection = builder.Configuration.GetConnectionString("Redis");
-//    options.Configuration = connection;
-//});
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    var connection = builder.Configuration.GetConnectionString("Redis");
+    options.Configuration = connection;
+});
 
 builder.Services.AddCors(options =>
 {

@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  # redis:
+  #   image: redis
+  #   restart: alwas
+  #   ports:
+  #     - "6379:6379"
+  backend:
+    image: ${DOCKER_REGISTRY-}chat
+    build:
+      context: .
+      dockerfile: chat/Dockerfile
