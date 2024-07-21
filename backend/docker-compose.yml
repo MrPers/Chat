@@ -11,3 +11,8 @@ services:
     build:
       context: .
       dockerfile: chat/Dockerfile
+  # client:
+  #   image: client  
+  #   build:
+  #       context: .
+  #       dockerfile: ../frontend/Dockerfile
